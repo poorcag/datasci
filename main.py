@@ -27,3 +27,12 @@ data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
 data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000))
 
 plt.show()
+
+#box plot overallqual/saleprice
+var = 'OverallQual'
+data = pd.concat([df_train['SalePrice'], df_train[var]], axis=1)
+f, ax = plt.subplots(figsize=(8, 6))
+fig = sns.boxplot(x=var, y="SalePrice", data=data)
+fig.axis(ymin=0, ymax=800000)
+
+plt.show()
